@@ -1,0 +1,15 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var per in Model)
+{
+    <div class="rounded p-2 m-1" style="background-color:#D8D9DB">
+    <div>ID: @per.Id</div>
+    <div>FIO: @per.LastName @per.FirstName @per.MiddleName</div>
+    <div class="btn-group">
+        <a class="btn btn-primary">Delete</a>
+    </div>
+</div>
+}

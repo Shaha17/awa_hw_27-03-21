@@ -1,0 +1,49 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Persons";
+}
+
+<form asp-controller="Person" asp-action="FindById" method="get">
+    <div class="row p-2">
+        <div class="col-md-1">Id</div>
+        <div class="col-md-4">
+            <input required name="id" class="form-control" type="text" />
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" type="submit">Find by ID</button>
+        </div>
+    </div>
+</form>
+
+<form asp-controller="Person" asp-action="FindByFio" method="get">
+    <div class="row p-2">
+        <div class="col-md-1">FIO</div>
+        <div class="col-md-4">
+            <input required name="fio" class="form-control" type="text" />
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" type="submit">Find by FIO</button>
+        </div>
+    </div>
+</form>
+
+<div class="row p-2">
+    <div class="btn-group">
+        <a href="~/Person/Create" class="btn btn-primary">Create</a>
+    </div>
+</div>
+<div class="row d-block">
+
+
+    @foreach (var per in Model)
+    {
+        <div class="rounded p-2 m-1" style="background-color:#D8D9DB">
+            <div>ID: @per.Id</div>
+            <div>FIO: @per.LastName @per.FirstName @per.MiddleName</div>
+            <div class="btn-group">
+                <a href="~/Person/Delete?id=@per.Id" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+</div>

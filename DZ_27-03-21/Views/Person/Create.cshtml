@@ -1,0 +1,31 @@
+@model DZ_27_03_21.Models.Person
+@{
+    ViewData["Title"] = "Create account";
+}
+
+<form asp-action="Create" method="post">
+    <div class="row my-1">
+        <div class="col-md-2">Lastname</div>
+        <div class="col-md-4">
+            <input required autocomplete="off" asp-for="LastName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="row my-1">
+        <div class="col-md-2">Firstname</div>
+        <div class="col-md-4">
+            <input required autocomplete="off" asp-for="FirstName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="row my-1">
+        <div class="col-md-2">Midllename</div>
+        <div class="col-md-4">
+            <input autocomplete="off" asp-for="MiddleName" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <input class="btn btn-success" type="submit" value="Create" />
+        </div>
+    </div>
+</form>
